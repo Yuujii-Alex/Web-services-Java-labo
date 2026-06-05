@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+	<script defer th:src="@{/js/app.js}"></script>
+
+	<title>Transfer funds</title>
+</head>
+
+<body class="bg-body-tertiary">
+<div class="container py-4">
+	<div class="card shadow-sm">
+		<div class="card-body">
+			<h1 class="h3 mb-4">Transfer funds</h1>
+
+			<form th:action="@{/transaction}" method="post" onsubmit="return validate()" class="row g-3">
+				<div class="col-12 col-md-4">
+					<label for="wallet1" class="form-label">Wallet1</label>
+					<select class="form-select" name="wallet1" id="wallet1" required>
+						<option value="walletA">Wallet A</option>
+						<option value="walletB">Wallet B</option>
+					</select>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<label for="wallet2" class="form-label">Wallet2</label>
+					<select class="form-select" name="wallet2" id="wallet2" required>
+						<option value="walletA">Wallet A</option>
+						<option value="walletB">Wallet B</option>
+					</select>
+				</div>
+
+				<div class="col-12 col-md-4">
+					<label for="amount" class="form-label">Amount</label>
+					<input type="text" class="form-control" name="amount" id="amount" required>
+				</div>
+
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Transfer</button>
+					<a class="btn btn-outline-secondary ms-2" th:href="@{/alltransactions}">All transactions</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
