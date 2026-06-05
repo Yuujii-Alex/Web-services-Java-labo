@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <title>Infraction detail</title>
+</head>
+
+<body class="bg-body-tertiary">
+<div class="container py-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h1 class="h3 mb-4">
+                Infraction ID:
+                <span th:text="${infraction?.id}">-</span>
+            </h1>
+
+            <dl class="row mb-0">
+                <dt class="col-sm-4">Jaar</dt><dd class="col-sm-8" th:text="${infraction?.year}">-</dd>
+                <dt class="col-sm-4">Maand</dt><dd class="col-sm-8" th:text="${infraction?.month}">-</dd>
+                <dt class="col-sm-4">Datum</dt><dd class="col-sm-8" th:text="${infraction?.date}">-</dd>
+                <dt class="col-sm-4">Straat</dt><dd class="col-sm-8" th:text="${infraction?.street}">-</dd>
+                <dt class="col-sm-4">Rijrichting</dt><dd class="col-sm-8" th:text="${infraction?.drivingDirection}">-</dd>
+                <dt class="col-sm-4">Snelheidslimiet</dt><dd class="col-sm-8" th:text="${infraction?.speedLimit}">-</dd>
+                <dt class="col-sm-4">Voorbijgangers</dt><dd class="col-sm-8" th:text="${infraction?.passersby}">-</dd>
+                <dt class="col-sm-4">Overtredingen snelheid</dt><dd class="col-sm-8" th:text="${infraction?.infractionsSpeed}">-</dd>
+                <dt class="col-sm-4">Overtredingen rood licht</dt><dd class="col-sm-8" th:text="${infraction?.infractionsRedLight}">-</dd>
+            </dl>
+
+            <div class="mt-4">
+                <a class="btn btn-outline-secondary" th:href="@{/search}">Search for infractions by year</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
