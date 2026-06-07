@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Check</title>
+</head>
+<body>
+    
+    <main>
+        <div>
+            <h1>Add a Check</h1>
+        </div>
+
+        <form action="#" th:action="@{/check}" method="post">
+            <label for="dateToCheck">Date to check</label>
+            <input type="text" id="dateToCheck" name="dateToCheck" placeholder="dd/MM/yyyy" />
+
+            <label for="startDate">Start date:</label>
+            <input type="text" id="startDate" name="startDate" placeholder="dd/MM/yyyy" />
+            <label for="endDate">End date:</label>
+            <input type="text" id="endDate" name="endDate" placeholder="dd/MM/yyyy" />
+
+            <button type="submit">Add Check</button>
+        </form>
+    </main>
+</body>
+</html>

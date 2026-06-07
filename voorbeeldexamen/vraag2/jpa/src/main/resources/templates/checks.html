@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checks</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>List of Checks</h1>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date to check</th>
+                    <th>Yes or No</th>
+                    <th>Number of days</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="check : ${checks}">
+                    <td th:text="${#temporals.format(check.dateToCheck, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${check.checked ? 'Yes' : 'No'}"></td>
+                    <td th:text="${check.days}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/check}">Add a check</a>
+    </main>
+</body>
+</html>

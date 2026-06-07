@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>List of Students</h1>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Date of birth</th>
+                    <th>Study Program</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.firstName}"></td>
+                    <td th:text="${student.lastName}"></td>
+                    <td th:text="${student.dateOfBirth}"></td>
+                    <td th:text="${student.studyProgram}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/studentForm}">Add a student</a>
+    </main>
+</body>
+</html>

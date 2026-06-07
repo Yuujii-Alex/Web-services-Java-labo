@@ -1,11 +1,15 @@
 package edu.ap.spring.controller;
 
-import edu.ap.spring.service.MoviesService;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import edu.ap.spring.service.MoviesService;
 
 @Controller
 public class RedisController {
